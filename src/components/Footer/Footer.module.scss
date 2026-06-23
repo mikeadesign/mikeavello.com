@@ -1,0 +1,42 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  background: $color-bg-dark-2;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-block: $space-8;
+}
+
+.inner {
+  @include container;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: $space-4;
+}
+
+.name {
+  font-family: $font-heading;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.copy {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.3);
+}
+
+.socials {
+  display: flex;
+  gap: $space-5;
+
+  a {
+    color: rgba(255,255,255,0.35);
+    transition: color $transition;
+
+    &:hover {
+      color: rgba(255,255,255,0.85);
+    }
+  }
+}

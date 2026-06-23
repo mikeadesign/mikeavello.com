@@ -1,0 +1,87 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.about {
+  @include section-padding;
+  background: $color-bg-warm;
+}
+
+.inner {
+  @include container;
+  display: grid;
+  gap: $space-16;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1fr 280px;
+    gap: $space-20;
+    align-items: start;
+  }
+}
+
+.textCol {
+  max-width: 66ch;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: $color-text-muted;
+  }
+}
+
+// Stats sidebar
+.statCol {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: $space-6;
+
+  @include respond-to(lg) {
+    flex-direction: column;
+    gap: $space-8;
+    padding-top: $space-4;
+  }
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.statValue {
+  font-family: $font-heading;
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: $color-primary;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $color-text-muted;
+  line-height: 1.4;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  font-size: 0.875rem;
+  color: $color-text-muted;
+  margin-top: $space-2;
+
+  @include respond-to(lg) {
+    margin-top: $space-4;
+    padding-top: $space-6;
+    border-top: 1px solid $color-border;
+  }
+}

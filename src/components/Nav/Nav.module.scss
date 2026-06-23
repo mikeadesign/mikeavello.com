@@ -1,0 +1,188 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: background $transition-slow, box-shadow $transition-slow;
+}
+
+.scrolled {
+  background: rgba($color-bg-dark, 0.96);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.inner {
+  @include container;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-family: $font-heading;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.92);
+  letter-spacing: 0.01em;
+  transition: color $transition;
+
+  &:hover {
+    color: $color-primary-light;
+  }
+}
+
+.navAvatarWrap {
+  overflow: hidden;
+  width: 0;
+  height: 30px;
+  flex-shrink: 0;
+  margin-right: 0;
+  transition:
+    width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    margin-right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navAvatarVisible {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.navAvatar {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid rgba($color-primary, 0.5);
+}
+
+.links {
+  display: none;
+  gap: $space-8;
+  align-items: center;
+
+  @include respond-to(md) {
+    display: flex;
+  }
+}
+
+.link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  transition: color $transition;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: $color-primary-light;
+    transform: scaleX(0);
+    transition: transform $transition;
+  }
+
+  &:hover {
+    color: rgba(255,255,255,0.85);
+  }
+
+  &.active {
+    color: $color-white;
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.resumeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $color-primary-light;
+  border: 1px solid rgba($color-primary, 0.4);
+  border-radius: $radius-full;
+  padding: 5px 14px;
+  transition: color $transition, border-color $transition, background $transition;
+
+  &:hover {
+    color: $color-white;
+    border-color: rgba($color-primary-light, 0.8);
+    background: rgba($color-primary, 0.15);
+  }
+}
+
+// Mobile hamburger
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: $space-2;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @include respond-to(md) {
+    display: none;
+  }
+
+  span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 2px;
+    transition: transform $transition, opacity $transition;
+    transform-origin: center;
+  }
+
+  &.active {
+    span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  }
+}
+
+.open {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  min-height: calc(100svh - 64px);
+  background: $color-bg-dark;
+  padding: $space-8 $container-px;
+  gap: $space-6;
+
+  .link {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.7);
+
+    &.active {
+      color: $color-white;
+    }
+  }
+
+  .resumeLink {
+    margin-top: $space-2;
+  }
+}

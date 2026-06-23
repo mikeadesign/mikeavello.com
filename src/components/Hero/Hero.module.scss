@@ -1,0 +1,214 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.hero {
+  min-height: 100svh;
+  background: $color-bg-dark;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  // Subtle warm radial gradient in top-right
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba($color-primary, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  // Subtle cool radial gradient bottom-left
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: -5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba($color-secondary, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+}
+
+.inner {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-12;
+  padding-top: $space-20;
+  padding-bottom: $space-16;
+
+  @include respond-to(lg) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: $space-16;
+  }
+}
+
+.content {
+  flex: 1;
+  text-align: center;
+
+  @include respond-to(lg) {
+    text-align: left;
+  }
+}
+
+.greeting {
+  font-family: $font-body;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $color-primary-light;
+  margin-bottom: $space-3;
+}
+
+.name {
+  font-family: $font-heading;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 300;
+  color: $color-white;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: $space-4;
+}
+
+.title {
+  font-family: $font-body;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.02em;
+  margin-bottom: $space-6;
+}
+
+.tagline {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+  margin-bottom: $space-10;
+  max-width: 42ch;
+
+  @include respond-to(lg) {
+    margin-inline: 0;
+  }
+}
+
+.br {
+  display: none;
+
+  @include respond-to(md) {
+    display: block;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: $space-4;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include respond-to(lg) {
+    justify-content: flex-start;
+  }
+}
+
+.resumeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  margin-top: $space-5;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.45);
+  transition: color $transition;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+}
+
+// Avatar
+.avatarWrap {
+  flex-shrink: 0;
+  @include flex-center;
+}
+
+.avatarRing {
+  position: relative;
+  width: 260px;
+  height: 260px;
+
+  @include respond-to(md) {
+    width: 320px;
+    height: 320px;
+  }
+
+  @include respond-to(lg) {
+    width: 360px;
+    height: 360px;
+  }
+
+  // Decorative warm ring
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 1.5px solid rgba($color-primary, 0.35);
+  }
+
+  // Second ring
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -14px;
+    border-radius: 50%;
+    border: 1px solid rgba($color-primary, 0.12);
+  }
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: brightness(0.97) contrast(1.02);
+}
+
+// Scroll hint
+.scrollHint {
+  display: none;
+  position: absolute;
+  bottom: $space-8;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @include respond-to(lg) {
+    display: block;
+  }
+}
+
+.scrollLine {
+  display: block;
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+  margin: 0 auto;
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 0.8; transform: scaleY(1.15); }
+}

@@ -1,0 +1,34 @@
+# Mike Avello
+
+> Engineering leader with 18+ years building web platforms and the teams behind them. Based in Illinois. Actively seeking Director of Engineering roles.
+
+Mike Avello is an engineering leader specializing in frontend architecture, distributed team management, and the practical integration of AI into engineering workflows. He has held senior leadership roles at digital agencies and software product companies across the Chicago area, with a focus on scalable delivery, developer mentorship, and cross-functional collaboration.
+
+## Experience
+
+- **Adage Technologies** — Engineering Manager (2017–2026). Led distributed frontend teams across the US and Latin America on ecommerce, CMS, and custom digital platform engagements. Championed adoption of AI developer tooling including Claude Code, Microsoft Copilot, and ChatGPT.
+- **ROCCommerce** — Director of Front-End Development (2014–2017). Led frontend strategy and architecture for a modern B2B/B2C ecommerce platform.
+- **AmericanEagle.com** — Director of Front-End Development (2012–2014). Led frontend standards and team growth at a leading digital agency.
+- **AmericanEagle.com** — Lead Front-End Developer, Ecommerce (2007–2012). Built reusable ecommerce frontend systems and mentored developers.
+
+## Expertise
+
+- Engineering Leadership & Distributed Team Management
+- Frontend Architecture (JavaScript, TypeScript, React, HTML, CSS/SCSS)
+- AI-Augmented Development (Claude Code, Microsoft Copilot, ChatGPT)
+- Web Accessibility (ADA / WCAG)
+- CI/CD, Developer Experience & Process Improvement
+- Team Mentorship & Career Development
+- Agile Delivery & Cross-Functional Collaboration
+
+## Education
+
+Bachelor of Fine Arts in Interactive Media Design (Web Design & Development)
+Illinois Institute of Art — Schaumburg
+
+## Contact
+
+- Email: info@mikeavello.com
+- LinkedIn: https://www.linkedin.com/in/mikeavello/
+- Website: https://mikeavello.com
+- Resume: https://mikeavello.com/Mike-Avello-Resume.pdf

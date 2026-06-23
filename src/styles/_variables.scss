@@ -1,0 +1,63 @@
+// Colors — pulled from warm, earthy tones in the profile portrait
+$color-bg:           #FAF8F5;   // warm near-white
+$color-bg-warm:      #F0E9DE;   // warm cream for alternating sections
+$color-bg-dark:      #1C1A17;   // deep warm charcoal for hero/footer
+$color-bg-dark-2:    #242220;   // slightly lighter dark
+
+$color-text:         #2A2520;   // warm near-black
+$color-text-muted:   #6B6460;   // warm mid-gray for secondary text
+$color-text-light:   #9A9490;   // light gray
+
+$color-primary:      #9B7248;   // warm amber-brown (hair/beard tones)
+$color-primary-light:#B8895C;
+$color-primary-dark: #7A5636;
+
+$color-secondary:    #7A9BAB;   // cool slate-blue (background watercolor tones)
+$color-border:       #E4D9CE;   // warm border
+$color-white:        #FFFFFF;
+
+// Typography
+$font-heading: 'Fraunces', Georgia, 'Times New Roman', serif;
+$font-body:    'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+// Spacing
+$space-1:  0.25rem;
+$space-2:  0.5rem;
+$space-3:  0.75rem;
+$space-4:  1rem;
+$space-5:  1.25rem;
+$space-6:  1.5rem;
+$space-8:  2rem;
+$space-10: 2.5rem;
+$space-12: 3rem;
+$space-16: 4rem;
+$space-20: 5rem;
+$space-24: 6rem;
+$space-32: 8rem;
+
+// Border radius
+$radius-sm:   4px;
+$radius-md:   8px;
+$radius-lg:   16px;
+$radius-xl:   24px;
+$radius-full: 9999px;
+
+// Breakpoints
+$bp-sm:  640px;
+$bp-md:  768px;
+$bp-lg:  1024px;
+$bp-xl:  1280px;
+
+// Layout
+$container-max: 1100px;
+$container-px:  1.5rem;
+$section-py:    $space-24;
+
+// Transitions
+$transition:      200ms ease;
+$transition-slow: 400ms ease;
+
+// Shadows
+$shadow-sm: 0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.04);
+$shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
+$shadow-lg: 0 8px 32px rgba(0,0,0,0.10), 0 4px 10px rgba(0,0,0,0.06);
